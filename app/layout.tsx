@@ -1,10 +1,13 @@
 import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 import './globals.css';
 
+const inter = Inter({ subsets: ['latin'], display: 'swap' });
+
 export const metadata: Metadata = {
-  title: 'Mall Interactive Sales Deck',
+  title: 'American Dream — Interactive Sales Deck',
   description:
-    'Interactive browser-based sales deck showcasing mall scale, energy, and commercial value.'
+    'Interactive browser-based sales deck for American Dream: scale, energy, retail, venues, and partnership pathways.'
 };
 
 export default function RootLayout({
@@ -14,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

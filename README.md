@@ -1,8 +1,8 @@
-# Mall Interactive Sales Deck
+# American Dream — Interactive Sales Deck
 
 ## Overview
 
-This project is a **fully interactive, browser-based sales deck** designed to showcase a large-scale shopping mall as a premium commercial destination.
+This project is a **fully interactive, browser-based sales deck** for **American Dream** (Meadowlands, NJ), framed as a premium commercial destination and mixed-use platform.
 
 It replaces traditional fragmented sales materials (PDFs, videos, spreadsheets) with a **single, immersive web experience** that can be:
 
@@ -32,31 +32,36 @@ The platform aims to:
 ## Experience Flow
 
 ```text
-Hero → Stats → Brand Ecosystem → Luxury → Attractions → Events → CTA
+Opening → Why this property → Retail → Luxury → Dining & lifestyle → Attractions & entertainment → Events & platform → CTA
 ```
+
+Non-linear navigation: the sticky rail uses in-page anchors so prospects can jump in any order (Digideck-style journey control).
 
 ### Sections
 
-- **Hero**  
-  Cinematic entry using video to establish scale and positioning
+- **Opening**  
+  Cinematic entry; hero **video module is a placeholder** until final media is wired (autoplay / scroll-sync planned).
 
-- **Stats**  
-  Key metrics (footfall, size, brand count) to validate opportunity
+- **Why this property**  
+  Location, access, scale, demographics, regional reach, plus headline stats for a data-backed first impression.
 
-- **Brand Ecosystem**  
-  Showcases existing brands categorized by retail and luxury
+- **Retail**  
+  Anchors and a deliberate **growth trajectory** narrative (flagship, pop-up, leasing paths).
 
 - **Luxury**  
-  Dedicated premium environment with elevated visual treatment
+  Dedicated premium story; scroll-based theme shift to gold accents.
 
-- **Attractions**  
-  Highlights non-retail traffic drivers (entertainment, experiences)
+- **Dining & lifestyle**  
+  Food and day-night programming as a traffic and sponsorship lever—not filler.
 
-- **Events**  
-  Positions the mall as a platform for large-scale activations
+- **Attractions & entertainment**  
+  Differentiators that separate a mega-mall from a typical retail center.
+
+- **Events & platform**  
+  Concerts, activations, and **venue-level** language (performing arts, exposition / convention-style footprints). Includes an **expandable Events sub-module** (capabilities, highlights, booking CTA) to demonstrate Phase-2-style depth without a full rewrite.
 
 - **CTA**  
-  Drives leasing, sponsorship, and event inquiries
+  Mailto actions for leasing, sponsorships, and events (swap addresses before sending to partners).
 
 ---
 
@@ -94,14 +99,17 @@ A dynamic theme system transitions the interface from a standard dark theme to a
 ```text
 /app
 /components
+  SalesDeck.tsx          # linear presentation shell + anchor nav
+  EventsModulePanel.tsx  # expandable “Phase 2” style sub-module
 /data
+  deckContent.ts         # copy + structure (easy to fork into route-level modules later)
 /public
 ```
 
 - Component-based structure
 - Centralized data configuration
-- Reusable UI modules
-- Scroll-driven state management
+- Reusable UI modules (`EventsModulePanel` is the first deeper submodule)
+- Scroll-driven state management (luxury theme band)
 
 ---
 
@@ -119,9 +127,9 @@ A dynamic theme system transitions the interface from a standard dark theme to a
 
 AI tools were used to:
 
-- Generate visual assets where required
-- Assist in layout ideation and interaction patterns
-- Enhance content generation for storytelling
+- Accelerate layout and interaction patterns (structure, pacing, component boundaries)
+- Draft narrative scaffolding and section copy for rapid iteration
+- **Generative imagery / video** are intentionally stubbed in the UI until final assets are dropped in (hero module placeholder remains obvious in the build)
 
 ---
 
@@ -142,14 +150,27 @@ npm install
 npm run dev
 ```
 
+Build for production:
+
+```bash
+npm run build
+npm run start
+```
+
+---
+
+## Deployment (submission)
+
+Deploy to **Vercel**, **Netlify**, or **GitHub Pages** (static export would require a small Next config change). After deploy, share the **live URL** plus this repository as required by the assignment brief.
+
 ---
 
 ## Future Enhancements
 
-- Expandable modules (events, sponsorships, leasing paths)
-- Advanced animations (parallax, scroll-sync)
-- Performance optimization (lazy loading, media optimization)
-- Enhanced interactivity (filters, deeper exploration flows)
+- Additional sub-modules (sponsorship tiers, leasing paths by category) as routes or panels
+- Video-first implementation: hero + scroll-triggered reels, lazy `next/video` or optimized embeds
+- Performance pass once real media lands: `next/image`, prefetching, Lighthouse tuning toward 90+
+- Deeper interactivity (filters, saved tours for logged-in reps)
 
 ---
 
