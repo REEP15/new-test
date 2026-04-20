@@ -11,8 +11,6 @@ import hmIcon from '@/ref_icon/h&m_icon.jpeg';
 import nikeIcon from '@/ref_icon/nike_icon.jpeg';
 import uniqloIcon from '@/ref_icon/uniqlo_icon.jpeg';
 import zaraIcon from '@/ref_icon/zara_icon.jpeg';
-import heroVisionaryVideo from '@/ref_vids/The Visionary Retail Experience_720p.mp4';
-import whyPropertyAmbientVideo from '@/ref_vids/PixVerse_Pixverse-c1_Fusion_540P_1__2__3__4.mp4';
 import {
   attractions,
   diningLifestyle,
@@ -22,6 +20,9 @@ import {
   retailStory,
   whyProperty
 } from '@/data/deckContent';
+
+const heroVisionaryVideo = '/ref_vids/The Visionary Retail Experience_720p.mp4';
+const whyPropertyAmbientVideo = '/ref_vids/PixVerse_Pixverse-c1_Fusion_540P_1__2__3__4.mp4';
 
 const attractionVisuals: Record<string, { image: StaticImageData; caption: string }> = {
   'Immersive family entertainment district': {
